@@ -1,80 +1,100 @@
-/* Basic reset for the body */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Gloria Hallelujah', cursive, Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    background-color: #f9f6f2;
 }
 
-/* Container for the game board */
-#game-container {
-    display: grid;
-    grid-template-columns: repeat(3, 100px);
-    grid-template-rows: repeat(3, 100px);
-    gap: 5px;
-}
-
-/* Individual cells in the game board */
-.cell {
-    width: 100px;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2em;
-    background-color: #fff;
-    border: 2px solid #333;
-    cursor: pointer;
-    transition: background-color 0.3s;
+h1, #status, label, input, button {
+    font-family: 'Gloria Hallelujah', cursive, Arial, sans-serif;
+    letter-spacing: 1px;
 }
 
 .board {
     display: grid;
     grid-template-columns: repeat(3, 100px);
     grid-template-rows: repeat(3, 100px);
-    gap: 5px;
+    gap: 0;
+    width: 306px;
+    height: 306px;
+    /* SVG mit noch krummeren Linien */
+    background: url('data:image/svg+xml;utf8,<svg width="306" height="306" xmlns="http://www.w3.org/2000/svg"><line x1="92" y1="22" x2="108" y2="284" stroke="black" stroke-width="7" stroke-linecap="round"/><line x1="202" y1="18" x2="210" y2="292" stroke="black" stroke-width="7" stroke-linecap="round"/><line x1="18" y1="98" x2="288" y2="110" stroke="black" stroke-width="7" stroke-linecap="round"/><line x1="16" y1="208" x2="290" y2="200" stroke="black" stroke-width="7" stroke-linecap="round"/></svg>');
+    background-size: cover;
+    margin: 0 auto 20px auto;
+    position: relative;
+    box-shadow: 0 4px 16px 0 #e0d6c3;
+    border-radius: 22px 18px 25px 20px/20px 25px 18px 22px;
 }
 
-/* Hover effect for cells */
-.cell:hover {
-    background-color: #e0e0e0;
+.cell {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    font-family: 'Gloria Hallelujah', cursive, Arial, sans-serif;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s;
+    border-radius: 30% 40% 35% 45%/45% 35% 40% 30%;
 }
 
-
-/* Message display for win/lose conditions */
-#message {
-    margin-top: 20px;
-    font-size: 1.5em;
-    text-align: center;
-}
 .player-inputs {
     display: flex;
     flex-direction: column;
     gap: 10px;
     margin-bottom: 15px;
     justify-content: center;
-}
-.player-inputs input {
-    padding: 5px;
-    font-size: 1em;
+    align-items: center;
 }
 
-/* Styles for the restart button */
+.player-inputs input {
+    padding: 8px 14px;
+    font-size: 1.1em;
+    border: 2.5px solid #b7a99a;
+    border-radius: 18px 22px 16px 20px/20px 16px 22px 18px;
+    outline: none;
+    background: #fffdfa;
+    box-shadow: 1px 2px 0 #e0d6c3;
+    font-family: 'Gloria Hallelujah', cursive, Arial, sans-serif;
+}
+
+.player-inputs input:focus {
+    border-color: #e74c3c;
+    background: #fff3eb;
+}
+
 .player-inputs button {
     margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 1em;
-    background-color: #4CAF50;
+    padding: 12px 28px;
+    font-size: 1.1em;
+    background-color: #e74c3c;
     color: white;
-    border: none;
+    border: 2.5px solid #b33939;
+    border-radius: 22px 18px 25px 20px/20px 25px 18px 22px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, box-shadow 0.2s;
+    font-family: 'Gloria Hallelujah', cursive, Arial, sans-serif;
+    box-shadow: 2px 3px 0 #e0d6c3;
+    letter-spacing: 1px;
 }
 
-/* Hover effect for the restart button */
 .player-inputs button:hover {
-    background-color: #45a049;
+    background-color: #ff7f50;
+    box-shadow: 3px 5px 0 #e0d6c3;
+}
+
+#status {
+    margin-top: 20px;
+    font-size: 1.5em;
+    text-align: center;
+    font-family: 'Gloria Hallelujah', cursive, Arial, sans-serif;
+    color: #b33939;
+    text-shadow: 1px 1px 0 #fffdfa;
 }

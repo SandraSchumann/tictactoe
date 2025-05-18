@@ -29,9 +29,9 @@ const GameController = (() => {
     let gameOver = false;
 
     const winningCombos = [
-        [0,1,2],[3,4,5],[6,7,8],
-        [0,3,6],[1,4,7],[2,5,8],
-        [0,4,8],[2,4,6]
+        [0, 1, 2], [3, 4, 5], [6, 7, 8],
+        [0, 3, 6], [1, 4, 7], [2, 5, 8],
+        [0, 4, 8], [2, 4, 6]
     ];
 
     const setPlayers = (name1, name2) => {
@@ -106,7 +106,14 @@ const DisplayController = (() => {
         const board = Gameboard.getBoard();
         const cells = boardDiv.querySelectorAll(".cell");
         cells.forEach((cell, idx) => {
-            cell.textContent = board[idx];
+            if (board[idx] === "O") {
+                cell.innerHTML = `<svg width="48" height="48" viewBox="0 0 48 48"><path d="M24 42s-1.7-1.6-4.6-4.2C11.1 31.2 4 25.3 4 17.5 4 11.7 8.7 8 13.5 8c3.1 0 6.1 1.7 7.5 4.3C22.4 9.7 25.4 8 28.5 8 33.3 8 38 11.7 38 17.5c0 7.8-7.1 13.7-15.4 20.3C25.7 40.4 24 42 24 42z" fill="#e74c3c" stroke="#b33939" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+            } else if (board[idx] === "X") {
+                cell.textContent = "X";
+                cell.style.color = "#222";
+            } else {
+                cell.textContent = "";
+            }
         });
     };
 
