@@ -1,0 +1,80 @@
+/* Basic reset for the body */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+/* Container for the game board */
+#game-container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+}
+
+/* Individual cells in the game board */
+.cell {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    background-color: #fff;
+    border: 2px solid #333;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+}
+
+/* Hover effect for cells */
+.cell:hover {
+    background-color: #e0e0e0;
+}
+
+
+/* Message display for win/lose conditions */
+#message {
+    margin-top: 20px;
+    font-size: 1.5em;
+    text-align: center;
+}
+.player-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+    justify-content: center;
+}
+.player-inputs input {
+    padding: 5px;
+    font-size: 1em;
+}
+
+/* Styles for the restart button */
+.player-inputs button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect for the restart button */
+.player-inputs button:hover {
+    background-color: #45a049;
+}
